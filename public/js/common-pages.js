@@ -1,11 +1,14 @@
+let themeloader = document.querySelector('.theme-loader');
 "use strict";
-$(document).ready(function() {
-    // $('.theme-loader').addClass('loaded');
-    $('.theme-loader').animate({
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+    themeloader.animate({
         'opacity': '0',
     }, 1200);
     setTimeout(function() {
-        $('.theme-loader').remove();
-    }, 2000);
-    // $('.pcoded').addClass('loaded');
+        themeloader.remove();
+    }, 1200)
+    
+
 });

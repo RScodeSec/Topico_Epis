@@ -1,6 +1,16 @@
 <?php
+include_once "../Controller/session.php";
+$session = new Session();
+
+if(empty($_SESSION['nombres'])){
+    
+    $session->redirect();
+}
 include_once "./layout/header.php";
 ?>
+<div class="card">
+    <h2>welcome <?php echo $_SESSION['nombres']?></h2>
+</div>
 <div class="row">
     <!-- card1 start -->
     <div class="col-md-6 col-xl-3">

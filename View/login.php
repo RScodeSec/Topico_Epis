@@ -11,17 +11,17 @@
     <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="CodedThemes">
     <!-- Favicon icon -->
-    <link rel="icon" href="../public/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../public/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="public/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../public/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="public/icon/icofont/css/icofont.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
 
 <body class="fix-menu">
@@ -53,7 +53,7 @@
                     <div class="login-card card-block auth-body mr-auto ml-auto">
                         <form class="md-float-material">
                             <div class="text-center">
-                                <img src="../public/images/auth/logo-dark.png" alt="logo.png">
+                                <img src="public/images/auth/logo-dark.png" alt="logo.png">
                             </div>
                             <div class="auth-box">
                                 <div class="row m-b-20">
@@ -63,11 +63,11 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                    <input type="email" id="username" class="form-control" placeholder="Your Email Address">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" id="password" class="form-control" placeholder="Password">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -80,14 +80,14 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Iniciar Sesion</button>
+                                        <button  type="button" id="btn-login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Iniciar Sesion</button>
                                     </div>
                                 </div>
                                 <hr/>
                                 <div class="row">
                                     
                                     <div class="col-md-2">
-                                        <img src="../public/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        <img src="public/images/auth/Logo-small-bottom.png" alt="small-logo.png">
                                     </div>
                                 </div>
 
@@ -103,10 +103,9 @@
         </div>
         <!-- end of container-fluid -->
     </section>
-   
-    <script type="text/javascript" src="../public/js/jquery/jquery.min.js"></script>
-  >
-    <script type="text/javascript" src="../public/js/common-pages.js"></script>
+
+    <script type="text/javascript" src="public/js/common-pages.js"></script>
+    <script src="./view/js/login.js"></script>
 </body>
 
 </html>
