@@ -29,7 +29,7 @@ async function login(username, password){
 
 function notification(dataresponse){
     if(dataresponse == 0){
-        alert("nooo");
+        swal("Noo", "Usuario/incorrecto", "error");
     }
     else{
         window.location.href = "view/index.php";

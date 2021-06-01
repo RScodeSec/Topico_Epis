@@ -105,6 +105,7 @@
     </section>
 
     <script type="text/javascript" src="public/js/common-pages.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./view/js/login.js"></script>
 </body>
 
