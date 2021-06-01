@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GURU Able - Free Lite Admin Template </title>
+    <title>TOPICO</title>
  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -58,7 +58,7 @@
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="text-center txt-primary">Inciar Sesion</h3>
                                     </div>
                                 </div>
                                 <hr/>
@@ -75,7 +75,7 @@
                                        
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Olvido su Contreseña?</a>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
