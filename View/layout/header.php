@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GURU Able - Free Lite Admin Template </title>
+    <title>TOPICO </title>
 
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -113,16 +113,16 @@
                                 <div class="main-menu-header">
                                     <img class="img-40 img-radius" src="../public/images/avatar-4.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span>John Doe</span>
-                                        <span id="more-details">UX Designer<i class="ti-angle-down"></i></span>
+                                        <span>Rosario Bujaico Montes</span>
+                                        <span id="more-details">Enfermera<i class="ti-angle-down"></i></span>
                                     </div>
                                 </div>
 
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="#"><i class="ti-user"></i>View Profile</a>
-                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <a href="#"><i class="ti-user"></i>Ver Perfil</a>
+                                            <a href="#!"><i class="ti-settings"></i>Configuracion</a>
                                             <a href="../Controller/loginController.php?opc=logout"><i class="ti-layout-sidebar-left"></i>Cerrar Sesion</a>
                                         </li>
                                     </ul>
@@ -130,7 +130,7 @@
                             </div>
                             
 
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Panel de Control</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
                                     <a href="index.html">
@@ -142,17 +142,88 @@
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Components</span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Gestion de Topico </span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
                                             <a href="accordion.html">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Accordion</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Medicamentos</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>                 
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Atencion</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                
+                                        
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Gestion de Clientes</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                
+                                        
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Historial</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                
                                         
 
                                     </ul>
