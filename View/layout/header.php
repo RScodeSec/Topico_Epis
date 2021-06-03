@@ -9,7 +9,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       
       <!-- Favicon icon -->
-      <link rel="icon" href="../public/images/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="../public/images/lov3.png" type="image/lov3.png">
       <!-- Google font-->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
       <!-- Required Fremwork -->
@@ -79,7 +79,7 @@
                             <i class="ti-search"></i>
                         </a>
                         <a href="index.html">
-                            <img class="img-fluid" src="../public/images/logo.png" alt="Theme-Logo" />
+                            <img class="img-fluid" src="../public/images/logv2.1.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>
