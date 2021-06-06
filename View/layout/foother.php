@@ -1,16 +1,12 @@
-                                   </div>
+<html>
+                                   <body>
+                                       
+                                    
 
                                     <div id="styleSelector">
 
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+
 
 <script type="text/javascript" src="../public/js/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery-ui/jquery-ui.min.js"></script>

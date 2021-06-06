@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>GURU Able - Free Lite Admin Template </title>
+    <title>TOPICO</title>
  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -11,7 +11,7 @@
     <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="CodedThemes">
     <!-- Favicon icon -->
-    <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../public/images/lov3.png" type="image/lov3.png">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -53,21 +53,21 @@
                     <div class="login-card card-block auth-body mr-auto ml-auto">
                         <form class="md-float-material">
                             <div class="text-center">
-                                <img src="public/images/auth/logo-dark.png" alt="logo.png">
+                                <img src="public/images/logv2.png" alt="logv2.png">
                             </div>
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="text-center txt-primary">Inciar Sesion</h3>
                                     </div>
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="email" id="username" class="form-control" placeholder="Your Email Address">
+                                    <input type="email" id="username" class="form-control" placeholder="Usuario">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" id="password" class="form-control" placeholder="Password">
+                                    <input type="password" id="password" class="form-control" placeholder="Contraseña">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -75,7 +75,7 @@
                                        
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                        <a href="" class="text-right f-w-600 text-inverse"> Olvido su Contreseña?</a>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
@@ -87,7 +87,7 @@
                                 <div class="row">
                                     
                                     <div class="col-md-2">
-                                        <img src="public/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        <img src="public/images/lov3.png" alt="lov3.png">
                                     </div>
                                 </div>
 
