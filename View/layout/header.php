@@ -142,14 +142,14 @@
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Components</span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Gestion</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="accordion.html">
+                                            <a href="users.php">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Accordion</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Usuarios </span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>                 
