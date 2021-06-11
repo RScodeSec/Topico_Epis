@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once "style.php"; ?>
 
-<head>
-    <title>TOPICO </title>
+</head>
 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      
-      <!-- Favicon icon -->
-      <link rel="icon" href="../public/images/lov3.png" type="image/lov3.png">
-      <!-- Google font-->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
-      <!-- Required Fremwork -->
-      <link rel="stylesheet" type="text/css" href="../public/css/bootstrap/css/bootstrap.min.css">
-      <!-- themify-icons line icon -->
-      <link rel="stylesheet" type="text/css" href="../public/icon/themify-icons/themify-icons.css">
-      <!-- ico font -->
-      <link rel="stylesheet" type="text/css" href="../public/icon/icofont/css/icofont.css">
-      <!-- Style.css -->
-      <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-      <link rel="stylesheet" type="text/css" href="../public/css/jquery.mCustomScrollbar.css">
-  </head>
-
-  <body>
+<body>
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -63,7 +42,7 @@
         </div>
     </div>
     <!-- Pre-loader end -->
-    
+
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
@@ -98,7 +77,7 @@
                                 </a>
                             </li>
                         </ul>
-                      
+
                     </div>
                 </div>
             </nav>
@@ -128,12 +107,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            
+
 
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Panel de Control</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
@@ -142,7 +121,7 @@
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Gestion de Topico </span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Gestion de Topico </span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
@@ -152,22 +131,54 @@
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Medicamentos</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>  
+                                        </li>
                                         <li class=" ">
                                             <a href="accordion.html">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Atencion</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>                
-                                        
+                                        </li>
+
 
                                     </ul>
                                 </li>
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-user"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Gestion de Clientes</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Gestion de Clientes</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="Users.php">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Historial</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
@@ -177,59 +188,27 @@
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>  
+                                        </li>
                                         <li class=" ">
                                             <a href="accordion.html">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>                
+                                        </li>
                                         <li class=" ">
                                             <a href="accordion.html">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
-                                        </li>                
-                                        
+                                        </li>
 
-                                    </ul>
-                                </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Historial</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>  
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>                
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>                
-                                        
 
                                     </ul>
                                 </li>
                             </ul>
-                           
+
                         </div>
                     </nav>
 

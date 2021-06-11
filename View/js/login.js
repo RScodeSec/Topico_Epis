@@ -27,13 +27,10 @@ async function login(username, password){
 
 }
 
-function notification(dataresponse){
-    if(dataresponse == 0){
-        swal("Error", "Usuario/Contraseña Incorrecto", "error");
-    }
-    else{
-        window.location.href = "view/index.php";
-
-    }
-
+function notification(dataresponse) {
+  if (dataresponse == 0) {
+    swal("Error", "Usuario/Contraseña Incorrecto", "error");
+  } else {
+    window.location.href = "view/index.php";
+  }
 }

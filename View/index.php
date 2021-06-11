@@ -2,14 +2,14 @@
 include_once "../Controller/session.php";
 $session = new Session();
 
-if(empty($_SESSION['nombres'])){
-    
+if (empty($_SESSION['nombres'])) {
+
     $session->redirect();
 }
 include_once "./layout/header.php";
 ?>
 <div class="card">
-    <h2>BIENVENIDO <?php echo $_SESSION['nombres']?></h2>
+    <h2>BIENVENIDO <?php echo $_SESSION['nombres'] ?></h2>
 </div>
 <div class="row">
     <!-- card1 start -->
@@ -81,3 +81,8 @@ include_once "./layout/header.php";
 <?php
 include_once "./layout/foother.php";
 ?>
+
+
+</body>
+
+</html>
