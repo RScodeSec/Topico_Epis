@@ -9,7 +9,7 @@ if (empty($_SESSION['nombres'])) {
 include_once "./layout/header.php";
 ?>
 <div class="card">
-    <h2>BIENVENIDO <?php echo $_SESSION['nombres'] ?></h2>
+    <h2>BIENVENIDO EQUIPO <?php echo $_SESSION['nombres'] ?></h2>
 </div>
 <div class="row">
     <!-- card1 start -->
