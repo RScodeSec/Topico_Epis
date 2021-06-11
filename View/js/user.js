@@ -25,7 +25,7 @@ $(function () {
     columnDefs: [
       {
         defaultContent:
-          '<button class="eliminar_b btn-success"><i class="fas fa-edit editar"></i></button> <button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button>',
+          '<button class="editar_b btn-success"><i class="fas fa-edit editar"></i></button> <button class="eliminar_b"><i class="fas fa-trash-alt eliminar"></i></button>',
         targets: -1,
       },
       /*{
@@ -48,7 +48,7 @@ $(function () {
     .draw();
 
   //NO TOCAR GAA::::::::::::::::::
-  $("#btnNuevo").click(function () {
+  /* $("#btnNuevo").click(function () {
     $("#formPersonas").trigger("reset");
     $(".modal-header").css("background-color", "#28a745");
     $(".modal-header").css("color", "white");
@@ -56,33 +56,41 @@ $(function () {
     $("#modalCRUD").modal("show");
     id = null;
     opcion = 1; //alta
-  });
+  });*/
   ///////////////:::::::::::::here edit user
   $("#productosTabla tbody").on("click", ".editar_b", function () {
+    //alert("hello");
     let data = tableProd.row($(this).parents("tr")).data();
     $("#id").val(data["id"]);
-    $("#username").val(data["username"]);
-    $("#password").val(data["password"]);
-    $("#leveluser").val(data["user_level"]);
     $("#name").val(data["nombres"]);
-    $("#phone").val(data["telefono"]);
+    $("#typeUser").val(data["user_level"]);
+    //console.log(data["user_level"]);
+    $("#dni").val(data["dni"]);
+    $("#age").val(data["edad"]);
+    $("#gender").val(data["sexo"]);
+    $("#peso").val(data["peso"]);
+    $("#talla").val(data["talla"]);
+    //console.log(data["id"]);
 
     $(".modal-header").css("background-color", "#007bff");
     $(".modal-header").css("color", "white");
     $(".modal-title").text("Editar Usuario");
-    $("#modalCRUD").modal("show");
+    $("#modalNewUser").modal("show");
   });
 
   $("#productosTabla tbody").on("click", ".eliminar_b", function () {
-    let id = tableProd.row($(this).parents("tr")).data()["id"];
-    let data = {
-      action: "delete",
-      id: id,
-    };
+    let data = tableProd.row($(this).parents("tr")).data();
+    let id = data["id"];
+    var formData = new FormData();
+    formData.append("id", id);
+    formData.append("opc", "deleteUser");
+
     $.ajax({
       type: "POST",
-      url: "../controller/userController.php",
-      data: data,
+      url: "../Controller/userController.php",
+      data: formData,
+      processData: false,
+      contentType: false,
       success: function (response) {
         let result = JSON.parse(response);
         swal({
@@ -95,6 +103,7 @@ $(function () {
       },
     });
   });
+  //end func
 });
 /* FORM DATA MODEL */
 let newUser = document.getElementById("NewUser");
@@ -120,9 +129,10 @@ newUser.addEventListener("click", (event) => {
 //savenewuser.addEventListener("submit", (event) => {
 $("#formNewUser").submit(function (event) {
   event.preventDefault();
-  //console.log("hello");
+  let id = document.getElementById("id").value;
   var formData = new FormData(savenewuser);
   formData.append("opc", "newUser");
+  //formData.append("opc", "newUser");
   $.ajax({
     type: "post",
     url: "../Controller/userController.php",

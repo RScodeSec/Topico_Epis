@@ -10,7 +10,7 @@ if (empty($_SESSION['nombres'])) {
 <?php include_once "./layout/style.php"; ?>
 <link rel="stylesheet" type="text/css" href="../view/css/style.css">
 <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 <?php include_once "./layout/header.php"; ?>
 
 <div class="container panel">

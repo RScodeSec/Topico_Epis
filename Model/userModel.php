@@ -31,7 +31,7 @@ class User
     {
         $ic = new Conexion();
         $sql = "SELECT 
-        usuarios.nombres, usuario_grupo.group_name,usuarios.dni,usuarios.edad,usuarios.sexo,usuarios.peso,usuarios.talla 
+        usuarios.id ,usuarios.nombres, usuario_grupo.group_name,usuarios.dni,usuarios.edad,usuarios.sexo,usuarios.peso,usuarios.talla,usuarios.user_level 
         FROM usuarios 
         INNER JOIN usuario_grupo 
         ON usuarios.user_level = usuario_grupo.id";
@@ -39,5 +39,25 @@ class User
         $consulta->execute();
         $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
         return $objetoConsulta;
+    }
+
+    protected function updatefoModelUser()
+    {
+        $ic = new Conexion();
+
+        $sql = "UPDATE usuarios SET nombres='$this->nombres',user_level='$this->user_level',dni='$this->dni',edad='$this->edad',sexo='$this->sexo',peso='$this->peso',talla='$this->talla' WHERE id='$this->id'";
+        $insertar = $ic->db->prepare($sql);
+
+        return $insertar->execute();
+    }
+
+    protected function deleteInfoModelUser()
+    {
+        $ic = new Conexion();
+
+        $sql = "DELETE FROM usuarios WHERE id='$this->id'";
+        $insertar = $ic->db->prepare($sql);
+
+        return $insertar->execute();
     }
 }
