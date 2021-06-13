@@ -1,6 +1,6 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '\Core\database.php';
-class Invent
+class inventario
 {
     protected $id;
     protected $nombre;
@@ -23,7 +23,7 @@ class Invent
         return $insertar->execute();
     }
 
-    protected function listAllinvent()
+    protected function listAllUsers()
     {
         $ic = new Conexion();
         $sql = "SELECT 
