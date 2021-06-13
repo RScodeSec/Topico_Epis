@@ -5,7 +5,7 @@ $sesion = new Session();
 
 class inventarioController extends inventario
 {
-    public function saveNewinventario($nombre, $composicion, $forma, $cantidad, $fecha, $id)
+    public function saveNewinventario($id, $nombre, $composicion, $forma, $cantidad, $fecha)
     {
         $this->nombre = $nombre;
         $this->composicion = $composicion;
