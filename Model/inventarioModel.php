@@ -27,7 +27,7 @@ class inventario
     {
         $ic = new Conexion();
         $sql = "SELECT 
-        nombre,composicion,forma,cantidad,fecha
+        id,nombre,composicion,forma,cantidad,fecha
         FROM inventario";
         $consulta = $ic->db->prepare($sql);
         $consulta->execute();

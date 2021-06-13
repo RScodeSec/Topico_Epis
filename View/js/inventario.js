@@ -43,7 +43,8 @@ $(function () {
     //alert("hello");
     let data = tableinvent.row($(this).parents("tr")).data();
     $("#id").val(data["id"]);
-    $("#nombre").val(data["nombre"]);
+    //console.log(data["id"]);
+    $("#name").val(data["nombre"]);
     $("#composicion").val(data["composicion"]);
     //console.log(data["user_level"]);
     $("#forma").val(data["forma"]);
@@ -54,7 +55,7 @@ $(function () {
     $(".modal-header").css("background-color", "#007bff");
     $(".modal-header").css("color", "white");
     $(".modal-title").text("Editar Producto");
-    $("#modalNewUser").modal("show");
+    $("#modalNewInvent").modal("show");
   });
 
   $("#inventariotabla tbody").on("click", ".eliminar_b", function () {
