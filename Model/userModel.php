@@ -60,4 +60,24 @@ class User
 
         return $insertar->execute();
     }
+    protected function getDataDashboard()
+    {
+        $ic = new Conexion();
+        $sql = "SELECT  (
+            SELECT COUNT(*)
+            FROM   usuarios
+        ) AS numUser,
+        (
+            SELECT COUNT(*)
+            FROM inventario
+        ) AS numStock,
+        (
+            SELECT COUNT(*)
+            FROM historial          
+        ) AS numAttention";
+        $consulta = $ic->db->prepare($sql);
+        $consulta->execute();
+        $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
+        return $objetoConsulta;
+    }
 }
