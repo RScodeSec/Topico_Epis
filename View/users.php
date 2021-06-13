@@ -64,7 +64,7 @@ if (empty($_SESSION['nombres'])) {
                         <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Slecciona el Tipo de Usuario:</label><br>
+                        <label for="descripcion" class="col-form-label">Selecciona el Tipo de Usuario:</label><br>
                         <select class="form-select form-select-lg mb-6" id="typeUser" name="typeUser" aria-label="Default select example">
                             <option value="3">Estudiante</option>
                             <option value="2">Administrativo</option>
