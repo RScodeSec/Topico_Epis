@@ -5,7 +5,7 @@ $sesion = new Session();
 
 class inventarioController extends Invent
 {
-    public function saveNewinventario($id, $nombre, $composicion, $forma, $cantidad, $fecha)
+    public function saveNewinventario($nombre, $composicion, $forma, $cantidad, $fecha, $id)
     {
         $this->nombre = $nombre;
         $this->composicion = $composicion;
@@ -41,7 +41,7 @@ class inventarioController extends Invent
 if (isset($_POST['opc']) && $_POST['opc'] == 'NewInvent') {
     $instanciaController = new inventarioController();
 
-    $instanciaController->saveNewinventario($_POST['nombre'], $_POST['composicion'], $_POST['forma'], $_POST['cantidad'], $_POST['fecha'], $_POST['id']);
+    $instanciaController->saveNewinventario($_POST['name'], $_POST['composicion'], $_POST['forma'], $_POST['cantidad'], $_POST['fecha'], $_POST['id']);
 }
 
 if (isset($_GET['opc']) && $_GET['opc'] == 'listInvent') {

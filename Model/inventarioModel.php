@@ -1,6 +1,6 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '\Core\database.php';
-class Invent
+class inventario
 {
     protected $id;
     protected $nombre;
@@ -23,11 +23,11 @@ class Invent
         return $insertar->execute();
     }
 
-    protected function listAllinvent()
+    protected function listAllUsers()
     {
         $ic = new Conexion();
         $sql = "SELECT 
-        nombre,composicion,forma,cantidad,fecha
+        id,nombre,composicion,forma,cantidad,fecha
         FROM inventario";
         $consulta = $ic->db->prepare($sql);
         $consulta->execute();
