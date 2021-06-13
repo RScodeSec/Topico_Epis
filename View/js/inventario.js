@@ -54,7 +54,7 @@ $(function () {
 
     $(".modal-header").css("background-color", "#007bff");
     $(".modal-header").css("color", "white");
-    $(".modal-title").text("Editar Producto");
+    $(".modal-title").text("Editar Medicamento");
     $("#modalNewInvent").modal("show");
   });
 
@@ -101,7 +101,7 @@ newUser.addEventListener("click", (event) => {
   $("#formNewInvent").trigger("reset");
   $(".modal-header").css("background-color", "#00a000");
   $(".modal-header").css("color", "white");
-  $(".modal-title").text("Nuevo Producto");
+  $(".modal-title").text("Nuevo Medicamento");
   $("#modalNewInvent").modal("show");
 });
 

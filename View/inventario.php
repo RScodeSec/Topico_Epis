@@ -16,7 +16,7 @@ if (empty($_SESSION['nombres'])) {
 <div class="container panel">
     <div class="row">
         <div class="col-lg-12">
-            <button id="NewInvent" type="button" class="btn btn-primary" data-toggle="modal">Agregar Nuevo Producto</button>
+            <button id="NewInvent" type="button" class="btn btn-primary" data-toggle="modal">Agregar Nuevo Medicamento</button>
         </div>
     </div>
     <br>
