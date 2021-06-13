@@ -3,7 +3,7 @@ require_once dirname(dirname(__FILE__)) . '\Model\inventarioModel.php';
 require_once 'session.php';
 $sesion = new Session();
 
-class inventarioController extends inventario
+class inventarioController extends Invent
 {
     public function saveNewinventario($id, $nombre, $composicion, $forma, $cantidad, $fecha)
     {
