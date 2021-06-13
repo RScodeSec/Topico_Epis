@@ -57,7 +57,7 @@
                         <a class="mobile-search morphsearch-search" href="#">
                             <i class="ti-search"></i>
                         </a>
-                        <a href="index.html">
+                        <a href="index.php">
                             <img class="img-fluid" src="../public/images/logv2.1.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options">
@@ -90,7 +90,7 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-40 img-radius" src="../public/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <img class="img-40 img-radius" src="../public/images/enfer.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span>Rosario Bujaico Montes</span>
                                         <span id="more-details">Enfermera<i class="ti-angle-down"></i></span>
