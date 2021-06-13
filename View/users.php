@@ -61,7 +61,7 @@ if (empty($_SESSION['nombres'])) {
                     <input type="text" id="id" name="id" value="0" hidden>
                     <div class="form-group">
                         <label for="name" class="col-form-label">Nombres:</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" pattern="[a-zA-Z ]{2,60}" title="Solo debe contener letras. e.g. john" required>
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Selecciona el Tipo de Usuario:</label><br>
@@ -73,9 +73,9 @@ if (empty($_SESSION['nombres'])) {
                     </div>
                     <div class="form-group">
                         <label for="dni" class="col-form-label">DNI:</label>
-                        <input type="text" class="form-control" id="dni" name="dni" required>
+                        <input type="text" class="form-control" id="dni" name="dni" placeholder=" Ingrese 8 digitos" pattern="[0-9]{8}" title="debe contener numeros" required>
                         <label for="age" class="col-form-label">Edad:</label>
-                        <input type="text" class="form-control" id="age" name="age" required>
+                        <input type="text" class="form-control" id="age" name="age" placeholder=" Ingrese edad" pattern="[0-9]{2}" title="debe contener numeros" required>
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Selecciona Genero:</label><br>
@@ -86,9 +86,9 @@ if (empty($_SESSION['nombres'])) {
                     </div>
                     <div class="form-group">
                         <label for="peso" class="col-form-label">Peso:</label>
-                        <input type="text" class="form-control" id="peso" name="peso" required>
+                        <input type="text" class="form-control" id="peso" name="peso" placeholder=" 65.12" pattern="^\d*(\.\d{0,2})?$" required>
                         <label for="talla" class="col-form-label">Talla:</label>
-                        <input type="text" class="form-control" id="talla" name="talla" required>
+                        <input type="text" class="form-control" id="talla" name="talla" placeholder="165.14" pattern="^\d*(\.\d{0,2})?$" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

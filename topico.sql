@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2021 a las 19:36:57
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 13-06-2021 a las 17:36:06
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -450,7 +450,55 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nombres`, `rol`) VALUES
-(1, 'admin', '$2y$10$ie8i4zqC4LjAUOS2E8/Wb.xqC.M.biZ4Yo/eiAL9mwFc2L5/5i83e', 'topiquito', 'admin');
+(1, 'admin', '$2y$10$ie8i4zqC4LjAUOS2E8/Wb.xqC.M.biZ4Yo/eiAL9mwFc2L5/5i83e', 'Rosario Bujaico Montes', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombres` varchar(60) COLLATE utf8_bin NOT NULL,
+  `user_level` int(1) NOT NULL,
+  `dni` int(10) NOT NULL,
+  `ciclo` varchar(2) COLLATE utf8_bin NOT NULL,
+  `edad` varchar(2) COLLATE utf8_bin NOT NULL,
+  `sexo` varchar(1) COLLATE utf8_bin NOT NULL,
+  `peso` double(5,2) NOT NULL,
+  `talla` double(5,2) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombres`, `user_level`, `dni`, `ciclo`, `edad`, `sexo`, `peso`, `talla`, `status`) VALUES
+(45, 'Roger Salazar Irrazabal', 3, 61717100, '', '22', 'M', 63.21, 168.31, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_grupo`
+--
+
+CREATE TABLE `usuario_grupo` (
+  `id` int(11) NOT NULL,
+  `group_name` varchar(20) COLLATE utf8_bin NOT NULL,
+  `group_level` int(1) NOT NULL,
+  `group_status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `usuario_grupo`
+--
+
+INSERT INTO `usuario_grupo` (`id`, `group_name`, `group_level`, `group_status`) VALUES
+(1, 'docente', 1, 1),
+(2, 'administrativo', 2, 1),
+(3, 'estudiante', 3, 1);
 
 --
 -- Índices para tablas volcadas
@@ -543,6 +591,21 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `dni` (`dni`),
+  ADD KEY `user_level` (`user_level`) USING BTREE;
+
+--
+-- Indices de la tabla `usuario_grupo`
+--
+ALTER TABLE `usuario_grupo`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `group_level` (`group_level`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -623,6 +686,28 @@ ALTER TABLE `salidas`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario_grupo`
+--
+ALTER TABLE `usuario_grupo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`user_level`) REFERENCES `usuario_grupo` (`group_level`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

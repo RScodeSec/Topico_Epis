@@ -37,6 +37,11 @@ class UserController extends User
         echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario Eliminado Correctamente', 'icon' => 'success']) :
             json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Eliminar al Usuario', 'icon' => 'error']);
     }
+    public function dataDashboard()
+    {
+        $infoUsuario = $this->getDataDashboard();
+        echo json_encode($infoUsuario);
+    }
 }
 
 
@@ -55,4 +60,9 @@ if (isset($_POST['opc']) && $_POST['opc'] == 'deleteUser') {
     $instanciaController = new UserController();
 
     $instanciaController->deleteNewUser($_POST['id']);
+}
+if (isset($_GET['opc']) && $_GET['opc'] == 'infoIndex') {
+    $instanciaController = new UserController();
+
+    $instanciaController->dataDashboard();
 }
