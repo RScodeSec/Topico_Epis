@@ -4,6 +4,7 @@ class inventario
 {
     protected $id;
     protected $nombre;
+    protected $categoria;
     protected $composicion;
     protected $forma;
     protected $cantidad;
@@ -13,13 +14,14 @@ class inventario
     {
         $ic = new Conexion();
 
-        $sql = "INSERT INTO inventario(nombre,composicion,forma,cantidad,fecha) VALUES(?,?,?,?,?)";
+        $sql = "INSERT INTO inventario(nombre,categoria,composicion,forma,cantidad,fecha) VALUES(?,?,?,?,?,?)";
         $insertar = $ic->db->prepare($sql);
         $insertar->bindParam(1, $this->nombre);
-        $insertar->bindParam(2, $this->composicion);
-        $insertar->bindParam(3, $this->forma);
-        $insertar->bindParam(4, $this->cantidad);
-        $insertar->bindParam(5, $this->fecha);
+        $insertar->bindParam(2, $this->categoria);
+        $insertar->bindParam(3, $this->composicion);
+        $insertar->bindParam(4, $this->forma);
+        $insertar->bindParam(5, $this->cantidad);
+        $insertar->bindParam(6, $this->fecha);
         return $insertar->execute();
     }
 
@@ -27,7 +29,7 @@ class inventario
     {
         $ic = new Conexion();
         $sql = "SELECT 
-        id,nombre,composicion,forma,cantidad,fecha
+        id,nombre,categoria,composicion,forma,cantidad,fecha
         FROM inventario";
         $consulta = $ic->db->prepare($sql);
         $consulta->execute();
@@ -39,7 +41,7 @@ class inventario
     {
         $ic = new Conexion();
 
-        $sql = "UPDATE inventario SET nombre='$this->nombre',composicion='$this->composicion',forma='$this->forma',cantidad='$this->cantidad',fecha='$this->fecha' WHERE id='$this->id'";
+        $sql = "UPDATE inventario SET nombre='$this->nombre',categoria='$this->categoria',composicion='$this->composicion',forma='$this->forma',cantidad='$this->cantidad',fecha='$this->fecha' WHERE id='$this->id'";
         $insertar = $ic->db->prepare($sql);
 
         return $insertar->execute();

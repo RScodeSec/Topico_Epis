@@ -1,5 +1,16 @@
 <?php
 include_once "../Controller/session.php";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "topico";
+$conn = mysqli_connect($servername, $username, $password, $dbname) or die("Conexion fallida: " . mysqli_connect_error());
+// Imprime si existe algun error
+if (mysqli_connect_errno()) {
+    printf("La conexion ha fallado: %s\n", mysqli_connect_error());
+    exit();
+}
+
 $session = new Session();
 
 if (empty($_SESSION['nombres'])) {
@@ -29,6 +40,7 @@ if (empty($_SESSION['nombres'])) {
                         <tr id="tabla__head" class="table-h">
                             <th class="tabla__celda">#</th>
                             <th class="tabla__celda">Producto</th>
+                            <th class="tabla__celda">Categoria</th>
                             <th class="tabla__celda">Composicion</th>
                             <th class="tabla__celda">forma</th>
                             <th class="tabla__celda">Cantidad</th>
@@ -59,7 +71,21 @@ if (empty($_SESSION['nombres'])) {
                     <input type="text" id="id" name="id" value="0" hidden>
                     <div class="form-group">
                         <label for="name" class="col-form-label">Nombre del Producto:</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Categoria:</label><br>
+                       <select class="form-control" id="categoria" name="categoria" aria-label="Default select example">
+                        <option value="" >Seleccionar Categoria</option>
+                        <?php
+                        $sql = "SELECT id, descripcion FROM categoria";
+                        $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
+                        ?>
+                        <option value="<?php echo $rows['descripcion']; ?>"><?php echo $rows['descripcion']; ?></option>
+                        <?php }	?>
+                        </select>
+                                   
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Composicion:</label>
