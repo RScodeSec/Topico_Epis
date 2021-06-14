@@ -65,7 +65,7 @@ if (empty($_SESSION['nombres'])) {
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Selecciona el Tipo de Usuario:</label><br>
-                        <select class="form-select form-select-lg mb-6" id="typeUser" name="typeUser" aria-label="Default select example">
+                        <select class="form-control" id="typeUser" name="typeUser" aria-label="Default select example">
                             <option value="3">Estudiante</option>
                             <option value="2">Administrativo</option>
                             <option value="1">Docente</option>
@@ -79,7 +79,7 @@ if (empty($_SESSION['nombres'])) {
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Selecciona Genero:</label><br>
-                        <select class="form-select form-select-lg mb-6" id="gender" name="gender" aria-label="Default select example">
+                        <select class="form-control" id="gender" name="gender" aria-label="Default select example">
                             <option value="M">MASCULINO</option>
                             <option value="F">FEMENINO</option>
                         </select>

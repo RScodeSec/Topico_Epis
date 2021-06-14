@@ -14,7 +14,7 @@ class inventario
     {
         $ic = new Conexion();
 
-        $sql = "INSERT INTO inventario(nombre,categoria,composicion,forma,cantidad,fecha) VALUES(?,?,?,?,?,?)";
+        $sql = "INSERT INTO inventario (nombre,categoria,composicion,forma,cantidad,fecha) VALUES(?,?,?,?,?,?)";
         $insertar = $ic->db->prepare($sql);
         $insertar->bindParam(1, $this->nombre);
         $insertar->bindParam(2, $this->categoria);
