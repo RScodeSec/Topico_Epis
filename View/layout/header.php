@@ -100,8 +100,8 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="#"><i class="ti-user"></i>Ver Perfil</a>
-                                            <a href="#!"><i class="ti-settings"></i>Configuracion</a>
+                                            <!--<a href="#"><i class="ti-user"></i>Ver Perfil</a>-->
+                                            <a href="password.php"><i class="ti-settings"></i>Actualizar Contraseña</a>
                                             <a href="../Controller/loginController.php?opc=logout"><i class="ti-layout-sidebar-left"></i>Cerrar Sesion</a>
                                         </li>
                                     </ul>
