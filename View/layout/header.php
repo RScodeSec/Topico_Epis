@@ -57,7 +57,7 @@
                         <a class="mobile-search morphsearch-search" href="#">
                             <i class="ti-search"></i>
                         </a>
-                        <a href="index.html">
+                        <a href="index.php">
                             <img class="img-fluid" src="../public/images/logv2.1.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options">
@@ -90,7 +90,7 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-40 img-radius" src="../public/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <img class="img-40 img-radius" src="../public/images/enfer.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span>Rosario Bujaico Montes</span>
                                         <span id="more-details">Enfermera<i class="ti-angle-down"></i></span>
@@ -125,6 +125,13 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
+                                       <li class=" ">
+                                            <a href="categoria.php">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Categoria</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
                                         <li class=" ">
                                             <a href="inventario.php">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -194,21 +201,21 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="accordion.html">
+                                            <a href="">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Docentes</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="accordion.html">
+                                            <a href="">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Administrativos</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="accordion.html">
+                                            <a href="">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Estudiantes</span>
                                                 <span class="pcoded-mcaret"></span>

@@ -75,7 +75,7 @@
                                        
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="" class="text-right f-w-600 text-inverse"> Olvido su Contreseña?</a>
+                                      <!-- <a href="" class="text-right f-w-600 text-inverse"> Olvido su Contreseña?</a> -->
                                     </div>
                                 </div>
                                 <div class="row m-t-30">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2021 a las 17:36:06
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.26
+-- Tiempo de generación: 14-06-2021 a las 17:24:21
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -166,6 +166,28 @@ INSERT INTO `atencion_estudiante` (`id_atencion`, `hora_add`, `id_estudiante`, `
 (164, '19:25:00', 13, '2020/09/20', 'prueba', 'prueba'),
 (165, '19:26:21', 13, '2020/09/20', 'prueba', 'prueba'),
 (166, '19:34:29', 13, '2020/09/20', 'Registro de prueba', 'Registro de prueba');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `descripcion`) VALUES
+(1, 'Liquido x2'),
+(4, 'Primeros Auxilios'),
+(5, 'alcohol'),
+(7, 'Pastillas'),
+(8, 'Secundarios');
 
 -- --------------------------------------------------------
 
@@ -393,23 +415,28 @@ INSERT INTO `historial` (`id_historial`, `id_inventario`, `user_id`, `fecha`, `n
 --
 
 CREATE TABLE `inventario` (
-  `id_inventario` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `categoria` varchar(30) NOT NULL,
   `composicion` varchar(255) NOT NULL,
   `forma` varchar(255) NOT NULL,
-  `fecha` date NOT NULL,
-  `ingreso` int(10) NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `date_added` date NOT NULL
+  `fecha` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `inventario`
 --
 
-INSERT INTO `inventario` (`id_inventario`, `nombre`, `composicion`, `forma`, `fecha`, `ingreso`, `cantidad`, `date_added`) VALUES
-(19, 'alcohol', '500 ml', 'SoluciÃ³n', '2020-09-12', 6, 9, '2020-09-13'),
-(20, 'Clorfenamina', '500 mg', 'Tableta', '2020-12-12', 20, 5, '2020-09-19');
+INSERT INTO `inventario` (`id`, `nombre`, `categoria`, `composicion`, `forma`, `cantidad`, `fecha`) VALUES
+(19, 'alcohol', 'Liquido x2', '500 ml', 'Solucion', 10, '2020-09-12'),
+(20, 'Clorfenamina', 'Pastillas', '500 mg', 'Tableta', 5, '2020-12-12'),
+(27, 'agua oxigenada', 'Liquido x2', '065 cm', 'Botella', 50, '2021-06-07'),
+(29, 'Amoxilina', 'Pastillas', '25ml', 'tabletas', 23, '2021-06-15'),
+(30, 'panadol', 'Pastillas', '5ml', 'caja', 50, '2021-06-07'),
+(33, 'Pavilo', 'alcohol', '4ml', 'caja', 54, '2021-06-22'),
+(34, 'Frank Lagos', 'alcohol', '4ml', 'caja', 54, '2021-06-29'),
+(35, 'Prueba', 'Liquido x2', '5ml', 'Liquido', 45, '2021-06-15');
 
 -- --------------------------------------------------------
 
@@ -530,6 +557,12 @@ ALTER TABLE `atencion_estudiante`
   ADD PRIMARY KEY (`id_atencion`);
 
 --
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `detalle_administrativo`
 --
 ALTER TABLE `detalle_administrativo`
@@ -573,7 +606,7 @@ ALTER TABLE `historial`
 -- Indices de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  ADD PRIMARY KEY (`id_inventario`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombre` (`nombre`);
 
 --
@@ -634,6 +667,12 @@ ALTER TABLE `atencion_estudiante`
   MODIFY `id_atencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `detalle_administrativo`
 --
 ALTER TABLE `detalle_administrativo`
@@ -673,7 +712,7 @@ ALTER TABLE `historial`
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `salidas`

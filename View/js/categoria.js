@@ -1,5 +1,5 @@
 $(function () {
-  let tableinvent = $("#inventariotabla").DataTable({
+  let tableinvent = $("#categoriatabla").DataTable({
     language: {
       url: "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json",
     },
@@ -8,17 +8,12 @@ $(function () {
     lengthChange: false,
     pageLength: 5,
     ajax: {
-      url: "../Controller/inventarioController.php?opc=listInvent",
+      url: "../Controller/categoriaControlller.php?opc=listCat",
       dataSrc: "",
     },
     columns: [
       { data: null },
-      { data: "nombre" },
-      { data: "categoria" },
-      { data: "composicion" },
-      { data: "forma" },
-      { data: "cantidad" },
-      { data: "fecha" },
+      { data: "descripcion" },
       { data: null },
     ],
     columnDefs: [
@@ -40,36 +35,30 @@ $(function () {
     })
     .draw();
   ///////////////:::::::::::::here edit user
-  $("#inventariotabla tbody").on("click", ".editar_b", function () {
+  $("#categoriatabla tbody").on("click", ".editar_b", function () {
     //alert("hello");
     let data = tableinvent.row($(this).parents("tr")).data();
     $("#id").val(data["id"]);
     //console.log(data["id"]);
-    $("#nombre").val(data["nombre"]);
-    $("#categoria").val(data["categoria"]);
-    $("#composicion").val(data["composicion"]);
-    //console.log(data["user_level"]);
-    $("#forma").val(data["forma"]);
-    $("#cantidad").val(data["cantidad"]);
-    $("#fecha").val(data["fecha"]);
+    $("#descripcion").val(data["descripcion"]);
     //console.log(data["id"]);
 
     $(".modal-header").css("background-color", "#007bff");
     $(".modal-header").css("color", "white");
-    $(".modal-title").text("Editar Medicamento");
-    $("#modalNewInvent").modal("show");
+    $(".modal-title").text("Editar Cetegoria");
+    $("#modalNewCat").modal("show");
   });
 
-  $("#inventariotabla tbody").on("click", ".eliminar_b", function () {
+  $("#categoriatabla tbody").on("click", ".eliminar_b", function () {
     let data = tableinvent.row($(this).parents("tr")).data();
     let id = data["id"];
     var formData = new FormData();
     formData.append("id", id);
-    formData.append("opc", "deleteinvent");
+    formData.append("opc", "deletecat");
 
     $.ajax({
       type: "POST",
-      url: "../Controller/inventarioController.php",
+      url: "../Controller/categoriaControlller.php",
       data: formData,
       processData: false,
       contentType: false,
@@ -80,7 +69,7 @@ $(function () {
           text: result.text,
           icon: result.icon,
         }).then(function () {
-          $("#inventariotabla").DataTable().ajax.reload(null, false);
+          $("#categoriatabla").DataTable().ajax.reload(null, false);
         });
       },
     });
@@ -88,11 +77,11 @@ $(function () {
   //end func
 });
 /* FORM DATA MODEL */
-let newUser = document.getElementById("NewInvent");
+let newUser = document.getElementById("NewCat");
 
-let savenewuser = document.getElementById("formNewInvent");
+let savenewuser = document.getElementById("formNewCat");
 /*-- Modal */
-let modal = document.getElementById("modalNewInvent");
+let modal = document.getElementById("modalNewCat");
 //let formNewUser = document.getElementById("formNewUser");
 /*-- END Modal */
 /*SELECT MODAL*/
@@ -103,35 +92,35 @@ newUser.addEventListener("click", (event) => {
   $("#formNewInvent").trigger("reset");
   $(".modal-header").css("background-color", "#00a000");
   $(".modal-header").css("color", "white");
-  $(".modal-title").text("Nuevo Medicamento");
-  $("#modalNewInvent").modal("show");
+  $(".modal-title").text("Nueva Categoria");
+  $("#modalNewCat").modal("show");
 });
 
 /* form */
 //savenewuser.addEventListener("submit", (event) => {
-$("#formNewInvent").submit(function (event) {
+$("#formNewCat").submit(function (event) {
   event.preventDefault();
   let id = document.getElementById("id").value;
   var formData = new FormData(savenewuser);
-  formData.append("opc", "NewInvent");
+  formData.append("opc", "newCat");
   //formData.append("opc", "newUser");
   $.ajax({
     type: "post",
-    url: "../Controller/inventarioController.php",
+    url: "../Controller/categoriaControlller.php",
     data: formData,
     processData: false,
     contentType: false,
     success: function (response) {
       console.log(response);
       let result = JSON.parse(response);
-      $("#modalNewInvent").modal("hide");
+      $("#modalNewCat").modal("hide");
       //$(".modal-backdrop").hide();
       swal({
         title: result.title,
         text: result.text,
         icon: result.icon,
       }).then(function () {
-        $("#inventariotabla").DataTable().ajax.reload(null, false);
+        $("#categoriatabla").DataTable().ajax.reload(null, false);
       });
     },
   });
