@@ -56,4 +56,15 @@ class inventario
 
         return $insertar->execute();
     }
+
+
+    protected function showMyCats()
+    {
+        $ic = new Conexion();
+        $sql = "SELECT * FROM categoria ";
+        $consulta = $ic->db->prepare($sql);
+        $consulta->execute();
+        $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
+        return $objetoConsulta;
+    }
 }

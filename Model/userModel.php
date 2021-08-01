@@ -80,4 +80,16 @@ class User
         $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
         return $objetoConsulta;
     }
+
+    protected function searchIfExist()
+    {
+        $ic = new Conexion();
+        $sql = "SELECT nombres FROM usuarios WHERE dni = '$this->dni'";
+        $consulta = $ic->db->prepare($sql);
+        $consulta->execute();
+        //$objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
+        $cuenta = $consulta->rowCount();
+        //return $objetoConsulta;
+        return $cuenta;
+    }
 }

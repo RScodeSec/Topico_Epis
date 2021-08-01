@@ -16,10 +16,29 @@ class UserController extends User
         $this->talla = $talla;
         $this->id = $id;
         if ($id == 0) {
-            $infoUsuario = $this->saveInfoModelUser();
-            echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario agregado Correctamente', 'icon' => 'success']) :
-                json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Agregar al Usuario', 'icon' => 'error']);
+            //CHECK IF THIS USER EXIST//
+            $infoUsuario = $this->searchIfExist();
+
+            if ($infoUsuario > 0) {
+                echo json_encode(['title' => 'Ojo!', 'text' => 'El Usuario ya existe!', 'icon' => 'info']);
+
+                //$infoUsuario = $this->saveInfoModelUser();
+                //echo "existe";
+                //echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario agregado Correctamente', 'icon' => 'success']) :
+                // json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Agregar al Usuario', 'icon' => 'error']);
+            } else {
+                //echo "guardar";
+                $infoUsuario = $this->saveInfoModelUser();
+                echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario agregado Correctamente', 'icon' => 'success']) :
+                    json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Agregar al Usuario', 'icon' => 'error']);
+            }
+
+            //$infoUsuario = $this->saveInfoModelUser();
+
+            //echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario agregado Correctamente', 'icon' => 'success']) :
+            //json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Agregar al Usuario', 'icon' => 'error']);
         } else {
+            //echo "probando";
             $infoUsuario = $this->updatefoModelUser();
             echo $infoUsuario ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario Actualizado Correctamente', 'icon' => 'success']) :
                 json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Actualizado datos del Usuario', 'icon' => 'error']);

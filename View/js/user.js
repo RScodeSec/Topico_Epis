@@ -140,7 +140,7 @@ $("#formNewUser").submit(function (event) {
     processData: false,
     contentType: false,
     success: function (response) {
-      console.log(response);
+      //console.log(response);
       let result = JSON.parse(response);
       $("#modalNewUser").modal("hide");
       //$(".modal-backdrop").hide();

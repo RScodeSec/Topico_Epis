@@ -86,6 +86,12 @@ $(function () {
     });
   });
   //end func
+
+  // let mydata = tableinvent.row($(this).parents("tr")).data();
+  //console.log(mydata["id"]);
+  /*------select cat------------*/
+  let dep = $("#categoria");
+  dep.load("../Controller/inventarioController.php?opc=showMyCat");
 });
 /* FORM DATA MODEL */
 let newUser = document.getElementById("NewInvent");

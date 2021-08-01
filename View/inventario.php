@@ -1,16 +1,5 @@
 <?php
 include_once "../Controller/session.php";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "topico";
-$conn = mysqli_connect($servername, $username, $password, $dbname) or die("Conexion fallida: " . mysqli_connect_error());
-// Imprime si existe algun error
-if (mysqli_connect_errno()) {
-    printf("La conexion ha fallado: %s\n", mysqli_connect_error());
-    exit();
-}
-
 $session = new Session();
 
 if (empty($_SESSION['nombres'])) {
@@ -75,17 +64,11 @@ if (empty($_SESSION['nombres'])) {
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-form-label">Categoria:</label><br>
-                       <select class="form-control" id="categoria" name="categoria" aria-label="Default select example">
-                        <option value="" >Seleccionar Categoria</option>
-                        <?php
-                        $sql = "SELECT id, descripcion FROM categoria";
-                        $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
-                        ?>
-                        <option value="<?php echo $rows['descripcion']; ?>"><?php echo $rows['descripcion']; ?></option>
-                        <?php }	?>
+                        <select class="form-control" id="categoria" name="categoria" aria-label="Default select example">
+                            <option value="">Seleccionar Categoria</option>
+
                         </select>
-                                   
+
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Composicion:</label>
