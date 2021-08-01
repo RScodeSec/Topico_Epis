@@ -100,8 +100,8 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <!--<a href="#"><i class="ti-user"></i>Ver Perfil</a>-->
-                                            <a href="password.php"><i class="ti-settings"></i>Actualizar Contraseña</a>
+                                            <a href="#"><i class="ti-user"></i>Ver Perfil</a>
+                                            <a href="#!"><i class="ti-settings"></i>Configuracion</a>
                                             <a href="../Controller/loginController.php?opc=logout"><i class="ti-layout-sidebar-left"></i>Cerrar Sesion</a>
                                         </li>
                                     </ul>
@@ -222,6 +222,25 @@
                                             </a>
                                         </li>
 
+
+                                    </ul>
+                                </li>
+
+                                <!-- reporte -->
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Reporte</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="viewreporte.php">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Visualizar Reporte</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
 
                                     </ul>
                                 </li>
