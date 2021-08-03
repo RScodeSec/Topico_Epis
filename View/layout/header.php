@@ -101,7 +101,7 @@
                                     <ul>
                                         <li class="more-details">
                                             <a href="#"><i class="ti-user"></i>Ver Perfil</a>
-                                            <a href="#!"><i class="ti-settings"></i>Configuracion</a>
+                                            <a href="password.php"><i class="ti-settings"></i>Credenciales</a>
                                             <a href="../Controller/loginController.php?opc=logout"><i class="ti-layout-sidebar-left"></i>Cerrar Sesion</a>
                                         </li>
                                     </ul>
@@ -125,7 +125,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                       <li class=" ">
+                                        <li class=" ">
                                             <a href="categoria.php">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Categoria</span>
@@ -151,7 +151,7 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="">
+                                            <a href="attention.php">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Atencion</span>
                                                 <span class="pcoded-mcaret"></span>
