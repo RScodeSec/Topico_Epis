@@ -58,33 +58,33 @@ if (empty($_SESSION['nombres'])) {
             <form id="formNewInvent">
                 <div class="modal-body">
                     <input type="text" id="id" name="id" value="0" hidden>
-                    <div class="form-group">
-                        <label for="name" class="col-form-label">Nombre del Producto:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+                        <input type="text" class="form-control" id="nombre" name="nombre" required pattern="[A-Za-z0-9 ]+" title="Escriba el nombre del producto" placeholder="Descripcion">
                     </div>
-                    <div class="form-group">
-                        <label for="name" class="col-form-label">Categoria:</label><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-th"></i></span> 
                         <select class="form-control" id="categoria" name="categoria" aria-label="Default select example">
                             <option value="">Seleccionar Categoria</option>
 
                         </select>
 
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Composicion:</label>
-                        <input type="text" class="form-control" id="composicion" name="composicion" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-code"></i></span>
+                        <input type="text" class="form-control" id="composicion" name="composicion" placeholder="Composicion" title="Debe estar en ml, cm"required pattern="[A-Za-z0-9 ]+">
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Forma:</label>
-                        <input type="text" class="form-control" id="forma" name="forma" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <input type="text" class="form-control" id="forma" name="forma" placeholder="Forma" title="Puede ser caja, botella, tabletas, etc." required pattern="[a-zA-Z ]+">
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Cantidad:</label>
-                        <input type="text" class="form-control" id="cantidad" name="cantidad" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                        <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Stock" title="La cantidad de producto debe ser numero entero"required pattern="^[0-9]+">
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Fecha de Registro:</label>
-                        <input type="date" class="form-control" id="fecha" name="fecha" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control" id="fecha" name="fecha" required title="Es necesario poner la fecha">
                     </div>
                 </div>
 
