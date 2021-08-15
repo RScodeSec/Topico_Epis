@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2021 a las 17:24:21
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 15-08-2021 a las 04:10:29
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `topico`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `atensiones` (`dni` INT)  BEGIN
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_miatension` (IN `mihora` VARCHAR(20), IN `dni` INT(8) ZEROFILL, IN `fecha` VARCHAR(20), IN `diag` VARCHAR(100), IN `trat` VARCHAR(100), IN `drug` INT(10) UNSIGNED, IN `cant` INT(10) UNSIGNED)  BEGIN
+INSERT INTO atencion_estudiante (hora_add, id_estudiante, fecha_atencion, diagnostico, tratamiento, idMedicamento, cantMedicamento) 	VALUES(mihora, dni, fecha, diag, trat, drug, cant);
+UPDATE inventario SET cantidad=cantidad-cant WHERE id=drug;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -130,42 +145,17 @@ CREATE TABLE `atencion_estudiante` (
   `id_estudiante` int(11) NOT NULL,
   `fecha_atencion` varchar(25) NOT NULL,
   `diagnostico` varchar(25) NOT NULL,
-  `tratamiento` varchar(25) NOT NULL
+  `tratamiento` varchar(25) NOT NULL,
+  `idMedicamento` int(11) NOT NULL,
+  `cantMedicamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `atencion_estudiante`
 --
 
-INSERT INTO `atencion_estudiante` (`id_atencion`, `hora_add`, `id_estudiante`, `fecha_atencion`, `diagnostico`, `tratamiento`) VALUES
-(136, '19:28:10', 15, '2020/09/04', '111', '111'),
-(137, '19:29:06', 15, '2020/09/04', '222', '222'),
-(138, '19:31:17', 15, '2020/09/04', '345', '345'),
-(139, '03:58:56', 15, '2020/09/05', '321', '321'),
-(140, '00:05:37', 15, '2020/09/06', '312', '312'),
-(141, '01:33:02', 15, '2020/09/06', 'eee', 'eee'),
-(142, '22:44:20', 18, '2020/08/13', 'Se encuentra con fiebre ', 'Tomar paracetamol cada 8 '),
-(144, '23:02:04', 18, '2020/09/13', 'TRAT', 'TRAT'),
-(146, '16:14:16', 0, '2020/09/16', 'we', 'wer'),
-(147, '20:59:54', 0, '2020/09/16', 'asd', 'asd'),
-(148, '22:32:13', 0, '2020/09/16', 'qe', 'qwe'),
-(149, '22:32:16', 0, '2020/09/16', 'qe', 'qwe'),
-(150, '22:32:16', 0, '2020/09/16', 'qe', 'qwe'),
-(151, '22:32:16', 0, '2020/09/16', 'qe', 'qwe'),
-(152, '22:32:16', 0, '2020/09/16', 'qe', 'qwe'),
-(153, '22:32:16', 0, '2020/09/16', 'qe', 'qwe'),
-(154, '22:33:26', 0, '2020/09/16', 'qwe', 'qwe'),
-(155, '22:34:03', 0, '2020/09/16', 'mmmmm', 'mmmmmmmm'),
-(157, '18:22:53', 17, '2020/08/19', 'Tiene fiebre', 'Tomar la pastilla cada 8 '),
-(158, '18:36:35', 13, '2020/09/19', 'Dolor de estomago', 'Debe tomar mucha agua y t'),
-(159, '18:38:55', 13, '2020/09/19', 'Tiene fiebre alta y gripa', 'Debe tomar mucha agua y t'),
-(160, '19:16:47', 17, '2020/09/20', 'Prueba', 'Prueba'),
-(161, '19:24:56', 13, '2020/09/20', 'prueba', 'prueba'),
-(162, '19:25:00', 13, '2020/09/20', 'prueba', 'prueba'),
-(163, '19:25:00', 13, '2020/09/20', 'prueba', 'prueba'),
-(164, '19:25:00', 13, '2020/09/20', 'prueba', 'prueba'),
-(165, '19:26:21', 13, '2020/09/20', 'prueba', 'prueba'),
-(166, '19:34:29', 13, '2020/09/20', 'Registro de prueba', 'Registro de prueba');
+INSERT INTO `atencion_estudiante` (`id_atencion`, `hora_add`, `id_estudiante`, `fecha_atencion`, `diagnostico`, `tratamiento`, `idMedicamento`, `cantMedicamento`) VALUES
+(171, '01:38:57', 61717100, '15-08-2021', 'fiebre alta 28 c', '2 tomadas x dia', 29, 5);
 
 -- --------------------------------------------------------
 
@@ -430,13 +420,15 @@ CREATE TABLE `inventario` (
 
 INSERT INTO `inventario` (`id`, `nombre`, `categoria`, `composicion`, `forma`, `cantidad`, `fecha`) VALUES
 (19, 'alcohol', 'Liquido x2', '500 ml', 'Solucion', 10, '2020-09-12'),
-(20, 'Clorfenamina', 'Pastillas', '500 mg', 'Tableta', 5, '2020-12-12'),
+(20, 'Clorfenamina', 'Pastillas', '500 mg', 'Tableta', 6, '2020-12-12'),
 (27, 'agua oxigenada', 'Liquido x2', '065 cm', 'Botella', 50, '2021-06-07'),
-(29, 'Amoxilina', 'Pastillas', '25ml', 'tabletas', 23, '2021-06-15'),
+(29, 'Amoxilina', 'Pastillas', '25ml', 'tabletas', 33, '2021-06-15'),
 (30, 'panadol', 'Pastillas', '5ml', 'caja', 50, '2021-06-07'),
 (33, 'Pavilo', 'alcohol', '4ml', 'caja', 54, '2021-06-22'),
 (34, 'Frank Lagos', 'alcohol', '4ml', 'caja', 54, '2021-06-29'),
-(35, 'Prueba', 'Liquido x2', '5ml', 'Liquido', 45, '2021-06-15');
+(35, 'Prueba', 'Liquido x2', '5ml', 'Liquido', 45, '2021-06-15'),
+(36, 'll', 'Primeros Auxilios', 'ml', 'Caja', 52, '2021-07-27'),
+(37, 'demo', 'alcohol', 'demo', 'demo', 21, '2021-07-31');
 
 -- --------------------------------------------------------
 
@@ -466,18 +458,18 @@ INSERT INTO `salidas` (`id_salida`, `id_inventario`, `fecha`, `cantidad_total`) 
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(51) COLLATE utf8_bin NOT NULL,
-  `password` varchar(150) COLLATE utf8_bin NOT NULL,
   `nombres` varchar(50) COLLATE utf8_bin NOT NULL,
-  `rol` varchar(15) COLLATE utf8_bin NOT NULL
+  `rol` varchar(15) COLLATE utf8_bin NOT NULL,
+  `username` varchar(51) COLLATE utf8_bin NOT NULL,
+  `password` varchar(150) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `nombres`, `rol`) VALUES
-(1, 'admin', '$2y$10$ie8i4zqC4LjAUOS2E8/Wb.xqC.M.biZ4Yo/eiAL9mwFc2L5/5i83e', 'Rosario Bujaico Montes', 'admin');
+INSERT INTO `users` (`id`, `nombres`, `rol`, `username`, `password`) VALUES
+(1, 'Rosario Bujaico Montes', 'admin', 'admin', '$2y$10$ie8i4zqC4LjAUOS2E8/Wb.xqC.M.biZ4Yo/eiAL9mwFc2L5/5i83e');
 
 -- --------------------------------------------------------
 
@@ -503,7 +495,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombres`, `user_level`, `dni`, `ciclo`, `edad`, `sexo`, `peso`, `talla`, `status`) VALUES
-(45, 'Roger Salazar Irrazabal', 3, 61717100, '', '22', 'M', 63.21, 168.31, 1);
+(45, 'Roger Salazar Irrazabal', 3, 61717100, '', '22', 'M', 63.21, 168.31, 1),
+(47, 'peter castell', 1, 12345678, '', '22', 'M', 21.00, 21.00, 1),
+(48, 'gloria pena romero', 1, 20028686, '', '42', 'F', 65.00, 160.00, 1);
 
 -- --------------------------------------------------------
 
@@ -664,7 +658,7 @@ ALTER TABLE `atencion_docente`
 -- AUTO_INCREMENT de la tabla `atencion_estudiante`
 --
 ALTER TABLE `atencion_estudiante`
-  MODIFY `id_atencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `id_atencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -712,7 +706,7 @@ ALTER TABLE `historial`
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `salidas`
@@ -730,7 +724,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_grupo`
