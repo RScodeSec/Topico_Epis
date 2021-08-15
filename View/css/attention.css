@@ -5,3 +5,12 @@
 .userDetails {
   padding: 10px;
 }
+
+.diagnostic {
+  padding: 10px;
+}
+
+.finalizar {
+  padding: 10px;
+  text-align: right;
+}

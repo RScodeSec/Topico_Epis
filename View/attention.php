@@ -47,7 +47,7 @@ if (empty($_SESSION['nombres'])) {
                             <label for="peso">Peso</label>
                             <input type="text" class="form-control" id="peso" readOnly>
                         </div>
-                        <div class="form-group col-md-1">
+                        <div class="form-group col-md-2">
                             <label for="talla">Talla</label>
                             <input type="text" class="form-control" id="talla" readOnly>
                         </div>
@@ -57,9 +57,101 @@ if (empty($_SESSION['nombres'])) {
             </div>
 
         </div>
+
+
+        <div class="row diagnostic">
+            <div class="col-4">
+                <h5>Diagnostico</h5>
+                <div class="form-group">
+                    <label for="diagnostico">Redate el Diagnostico</label>
+                    <textarea class="form-control" id="diagnostico" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tratamiento">Redate el Tratamiento </label>
+                    <textarea class="form-control" id="tratamiento" rows="2" required></textarea>
+                </div>
+            </div>
+            <div class="col-8">
+                <h5>Medicamentos</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary" id="buttonAddDrug" data-toggle="modal" data-target="#exampleModal">Agregar Medicamento</button>
+                        <button type="button" class="btn btn-danger" id="buttonCleanDrug">Limpiar Medicamentos</button>
+                    </div>
+                </div>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cant.</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cleanRecDrug">
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <div class="finalizar">
+            <button type="button" id="btnSaveaIn" class="btn btn-primary gamela">Finalizar Atension</button>
+
+        </div>
+
+
+
+
     </div>
 </div>
 
+
+
+
+
+
+
+
+<!-- Modal :___________ -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buscar Medicamento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="drug">Ingrese Nombre de Medicamento</label>
+                    <input type="text" class="form-control" id="drug" placeholder="Ingrese Nombre de Medicamento">
+                </div>
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Composicion</th>
+                            <th scope="col">Forma</th>
+                            <th scope="col">Cant</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentResultDrugs">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
