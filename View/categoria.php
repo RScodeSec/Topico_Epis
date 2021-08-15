@@ -53,9 +53,9 @@ if (empty($_SESSION['nombres'])) {
             <form id="formNewCat">
                 <div class="modal-body">
                     <input type="text" id="id" name="id" value="0" hidden>
-                    <div class="form-group">
-                        <label for="name" class="col-form-label">Nombre del Categoria:</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" required>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Escriba la categoria" title="Debe contener letras y numeros solamente"required pattern="[A-Za-z0-9 ]+">
                     </div>
                 </div>
 
