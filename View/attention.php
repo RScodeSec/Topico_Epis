@@ -63,11 +63,11 @@ if (empty($_SESSION['nombres'])) {
             <div class="col-4">
                 <h5>Diagnostico</h5>
                 <div class="form-group">
-                    <label for="diagnostico">Redate el Diagnostico</label>
+                    <label for="diagnostico">Redacte el Diagnostico</label>
                     <textarea class="form-control" id="diagnostico" rows="2" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="tratamiento">Redate el Tratamiento </label>
+                    <label for="tratamiento">Redacte el Tratamiento </label>
                     <textarea class="form-control" id="tratamiento" rows="2" required></textarea>
                 </div>
             </div>
@@ -75,7 +75,7 @@ if (empty($_SESSION['nombres'])) {
                 <h5>Medicamentos</h5>
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary" id="buttonAddDrug" data-toggle="modal" data-target="#exampleModal">Agregar Medicamento</button>
+                        <button type="button" class="btn btn-primary" id="buttonAddDrug" data-toggle="modal" data-target="#exampleModal">Agregar Medicamentos</button>
                         <button type="button" class="btn btn-danger" id="buttonCleanDrug">Limpiar Medicamentos</button>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ if (empty($_SESSION['nombres'])) {
 
         </div>
         <div class="finalizar">
-            <button type="button" id="btnSaveaIn" class="btn btn-primary gamela">Finalizar Atension</button>
+            <button type="button" id="btnSaveaIn" class="btn btn-primary gamela">Finalizar Atencion</button>
 
         </div>
 
