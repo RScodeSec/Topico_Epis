@@ -5,9 +5,7 @@ require_once "../Core/database.php";
 
 class ModeloReportes{
 		
-	/*=============================================
-	DESCARGAR REPORTE
-	=============================================*/
+
 
 	static public function mdlDescargarReporte($tabla){
 

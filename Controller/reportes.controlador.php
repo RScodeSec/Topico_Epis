@@ -7,10 +7,7 @@ error_reporting(0);
 class ControladorReportes
 {
 
-    /*=============================================
-    DESCARGAR REPORTE EN EXCEL
-    =============================================*/
-
+ 
     public function ctrDescargarReporte()
     {
 
@@ -61,11 +58,6 @@ class ControladorReportes
 						</tr>");
 
                 foreach ($reporte as $key => $value) {
-
-                    /*=============================================
-                    TRAER PRODUCTO
-                    =============================================*/
-
                    
 
                     echo utf8_decode("
@@ -95,7 +87,7 @@ class ControladorReportes
 
             if ($_GET["reporte"] == "usuarios") {
 
-                // estudiante
+                
                 echo utf8_decode("
 
 					<table border='0'>
@@ -337,6 +329,8 @@ class ControladorReportes
 					");
 
             }
+
+
 
         }
 
